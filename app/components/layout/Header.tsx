@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
@@ -58,7 +57,7 @@ export default function Header() {
     <header className="bg-white shadow-sm">
       {/* Top Banner */}
       <div className="bg-blue-500 text-white text-center py-2 text-sm">
-        Livraison gratuite à partir de 50€ d'achat !
+        Livraison gratuite à partir de 50€ d&apos;achat !
       </div>
 
       {/* Main Navigation */}

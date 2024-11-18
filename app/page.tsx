@@ -18,8 +18,8 @@ export default function Home() {
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-xl p-8 rounded-lg">
             <h1 className="text-6xl font-bold mb-4 text-white drop-shadow-lg">
-              <span className="text-blue-400">L'été</span> est fait pour{' '}
-              <span className="text-blue-400">s'amuser !</span>
+              <span className="text-blue-400">L&apos;été</span> est fait pour{' '}
+              <span className="text-blue-400">s&apos;amuser !</span>
             </h1>
             <p className="text-2xl mb-8 text-white drop-shadow-md">
               Découvrez notre collection de jeux aquatiques pour des moments inoubliables
@@ -105,7 +105,7 @@ export default function Home() {
                 <li>
                   <Link href="/categories/piscine/jeux-eau" className="text-gray-600 hover:text-blue-500 flex items-center">
                     <span className="mr-2">→</span>
-                    Jeux d'eau
+                    Jeux d&apos;eau
                   </Link>
                 </li>
               </ul>
