@@ -1,11 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function Header() {
-  const pathname = usePathname();
-
   const menuCategories = {
     'Jeux de Plage': {
       href: '/categories/plage',
@@ -40,14 +35,6 @@ export default function Header() {
             { name: 'Plongée', href: '/categories/piscine/plongee' },
             { name: 'Jeux d\'eau', href: '/categories/piscine/jeux-eau' }
           ]
-        },
-        {
-          name: 'Collections',
-          items: [
-            { name: 'Animaux', href: '/categories/piscine/animaux' },
-            { name: 'Super-héros', href: '/categories/piscine/super-heros' },
-            { name: 'Sports', href: '/categories/piscine/sports' }
-          ]
         }
       ]
     }
@@ -55,28 +42,22 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm">
-      {/* Top Banner */}
       <div className="bg-blue-500 text-white text-center py-2 text-sm">
         Livraison gratuite à partir de 50€ d&apos;achat !
       </div>
 
-      {/* Main Navigation */}
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-2xl font-bold text-blue-600">SPLASH KIDS</span>
           </Link>
 
-          {/* Main Menu */}
           <nav className="hidden md:flex items-center space-x-8">
             {Object.entries(menuCategories).map(([category, { href, subCategories }]) => (
               <div key={category} className="group relative">
                 <Link 
                   href={href}
-                  className={`text-gray-800 font-semibold hover:text-blue-500 transition-colors py-8 px-4 flex items-center ${
-                    pathname.startsWith(href) ? 'text-blue-500' : ''
-                  }`}
+                  className="text-gray-800 font-semibold hover:text-blue-500 transition-colors py-8 px-4 flex items-center"
                 >
                   {category}
                   <svg
@@ -94,7 +75,6 @@ export default function Header() {
                   </svg>
                 </Link>
 
-                {/* Dropdown Menu */}
                 <div className="hidden group-hover:block absolute top-full left-0 w-64 bg-white shadow-lg rounded-b-lg">
                   {subCategories.map((section) => (
                     <div key={section.name} className="p-4">
@@ -106,9 +86,7 @@ export default function Header() {
                           <li key={item.name}>
                             <Link
                               href={item.href}
-                              className={`text-gray-600 hover:text-blue-500 transition-colors block py-1 ${
-                                pathname === item.href ? 'text-blue-500' : ''
-                              }`}
+                              className="text-gray-600 hover:text-blue-500 transition-colors block py-1"
                             >
                               {item.name}
                             </Link>
@@ -123,15 +101,12 @@ export default function Header() {
 
             <Link 
               href="/nouveautes"
-              className={`text-gray-800 font-semibold hover:text-blue-500 transition-colors py-8 px-4 ${
-                pathname === '/nouveautes' ? 'text-blue-500' : ''
-              }`}
+              className="text-gray-800 font-semibold hover:text-blue-500 transition-colors py-8 px-4"
             >
               Nouveautés
             </Link>
           </nav>
 
-          {/* Right Icons */}
           <div className="flex items-center space-x-6">
             <Link href="/search" className="text-gray-600 hover:text-blue-500">
               <span className="sr-only">Rechercher</span>
