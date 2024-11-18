@@ -1,101 +1,165 @@
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      {/* Hero Section */}
+      <section className="relative h-[600px]">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1519046904884-53103b34b206"
+            alt="Enfants jouant à la plage"
+            fill
+            className="object-cover brightness-75"
+            priority
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="max-w-xl p-8 rounded-lg">
+            <h1 className="text-6xl font-bold mb-4 text-white drop-shadow-lg">
+              <span className="text-blue-400">L'été</span> est fait pour{' '}
+              <span className="text-blue-400">s'amuser !</span>
+            </h1>
+            <p className="text-2xl mb-8 text-white drop-shadow-md">
+              Découvrez notre collection de jeux aquatiques pour des moments inoubliables
+            </p>
+            <Link
+              href="/categories/nouveautes"
+              className="bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+            >
+              Voir les nouveautés
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Categories */}
+      <section className="container mx-auto px-4 py-16">
+        {/* ... code des catégories ... */}
+      </section>
+
+      {/* Detailed Categories Section */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Jeux de Plage */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Jeux de Plage</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/categories/plage/ballons" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Ballons de plage
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/plage/sable" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Jeux de sable
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/plage/frisbees" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Frisbees
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/plage/raquettes" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Raquettes
+                  </Link>
+                </li>
+              </ul>
+              <Link 
+                href="/categories/plage"
+                className="mt-4 inline-block text-blue-500 hover:text-blue-600 font-semibold"
+              >
+                Voir tout →
+              </Link>
+            </div>
+
+            {/* Jeux de Piscine */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Jeux de Piscine</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/categories/piscine/bouees" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Bouées
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/piscine/gonflables" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Jeux gonflables
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/piscine/plongee" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Plongée
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/categories/piscine/jeux-eau" className="text-gray-600 hover:text-blue-500 flex items-center">
+                    <span className="mr-2">→</span>
+                    Jeux d'eau
+                  </Link>
+                </li>
+              </ul>
+              <Link 
+                href="/categories/piscine"
+                className="mt-4 inline-block text-blue-500 hover:text-blue-600 font-semibold"
+              >
+                Voir tout →
+              </Link>
+            </div>
+
+            {/* Nouveautés */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Nouveautés</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="relative w-16 h-16 flex-shrink-0">
+                    <Image
+                      src="/images/beach-ball.jpg"
+                      alt="Nouveau produit"
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Super Ballon XL</h4>
+                    <p className="text-blue-600">19.99€</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="relative w-16 h-16 flex-shrink-0">
+                    <Image
+                      src="/images/pool-float.jpg"
+                      alt="Nouveau produit"
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Bouée Licorne LED</h4>
+                    <p className="text-blue-600">29.99€</p>
+                  </div>
+                </div>
+              </div>
+              <Link 
+                href="/nouveautes"
+                className="mt-4 inline-block text-blue-500 hover:text-blue-600 font-semibold"
+              >
+                Voir tout →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
