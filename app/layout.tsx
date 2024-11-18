@@ -1,5 +1,5 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import Header from './components/layout/Header';
-import Toast from './components/ui/Toast';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -11,14 +11,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Toast />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="fr">
+        <body className={inter.className}>
+          <Header />
+          <main>
+            {children}
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
